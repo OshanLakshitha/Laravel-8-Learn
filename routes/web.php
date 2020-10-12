@@ -17,4 +17,10 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/home/{name?}', [HomeController::class,'index'])->name('home.index');
+
+//view render
+Route:: get('/user',function(){
+    return view('user');
+});
