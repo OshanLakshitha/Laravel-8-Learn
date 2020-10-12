@@ -8,5 +8,9 @@
 </head>
 <body>
     <h1>user view</h1>
+    <h2>User name {{$name}}</h2>
+    <p>name :{{$users['name']}}</p>
+    <p>email :{{$users['email']}}</p>
+    <p>phone :{{$users['phone']}}</p>
 </body>
 </html>
