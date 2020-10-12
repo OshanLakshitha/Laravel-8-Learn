@@ -26,9 +26,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //with out call numbers
 Route::get('/users/{name?}',function($name=null){
     return "Hi user" . $name;
-})->where('name','[a-zA-Z]+');
+});
 
 //only pass numbes parameters
 Route::get('/usersID/{id?}',function($id=null){
     return "Hi user" . $id;
-})->where('id','[0-9]+');
+});
