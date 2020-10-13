@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FluentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::get('/home/{name?}', [HomeController::class,'index'])->name('home.index')
 
 //view render controller
 Route:: get('/user',[UserController::class,'index'])->name('user.index');
+
+Route::get('/fluent-string',[FluentController::class,'index'])->name('fluent-string.index');
