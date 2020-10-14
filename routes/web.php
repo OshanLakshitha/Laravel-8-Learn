@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FluentController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,9 @@ Route::get('/home/{name?}', [HomeController::class,'index'])->name('home.index')
 Route:: get('/user',[UserController::class,'index'])->name('user.index');
 
 Route::get('/fluent-string',[FluentController::class,'index'])->name('fluent-string.index');
+
+//login form routing
+Route::get('/login',[LoginController::class,'index'])->name('login.index');
+
+//login form routing
+Route::post('/login',[LoginController::class,'loginSubmit'])->name('loginSubmit');
