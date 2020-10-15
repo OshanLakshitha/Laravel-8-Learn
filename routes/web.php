@@ -7,7 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SessionController;
-
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,3 +45,6 @@ Route::get('/session/set',[SessionController::class,'storeSessionData'])->name('
 
 //delete session
 Route::get('/session/delete',[SessionController::class,'deleteSessionData'])->name('session.delete');
+
+//get database value
+Route::get('/post',[PostController::class,'getAllPost'])->name('post.getAllPost');
