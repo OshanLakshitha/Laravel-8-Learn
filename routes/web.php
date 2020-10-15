@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,12 @@ Route::post('/login',[LoginController::class,'loginSubmit'])->name('loginSubmit'
 
 //only one pagerequest check middleware 
 //Route::get('/login',[LoginController::class,'index'])->name('login.index')->middleware('checkuser');
+
+//get session data
+Route::get('/session/get',[SessionController::class,'getSessionData'])->name('session.get');
+
+//set session data
+Route::get('/session/set',[SessionController::class,'storeSessionData'])->name('session.store');
+
+//delete session
+Route::get('/session/delete',[SessionController::class,'deleteSessionData'])->name('session.delete');
