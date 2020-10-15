@@ -20,10 +20,18 @@
                             <div class="form-group">
                                 <label>Username</label>
                                 <input type="text" name="name" id="name" class="form-control" placeholder="Username" />
+
+                                @error('name')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
+                                
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
                                 <input type="password" name="pw" id="pw" class="form-control" placeholder="Password" />
+                                @error('pw')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="row">
                                 <div class="col-8 text-left">

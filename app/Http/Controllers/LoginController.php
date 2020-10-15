@@ -10,6 +10,12 @@ class LoginController extends Controller
         return view('login');
     }
     function loginSubmit(Request $req){
+
+        $validatedData = $req->validate([
+            'name'=>'required|email',
+            'pw'=>'required|min:6|max:12'
+        ]);
+
         $name=$req->input('name');
         $pw=$req->input('pw');
         return 'Email : '. $name . '<br>'.'Password :'. $pw;
