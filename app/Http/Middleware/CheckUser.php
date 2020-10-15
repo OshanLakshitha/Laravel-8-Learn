@@ -16,6 +16,7 @@ class CheckUser
      */
     public function handle(Request $request, Closure $next)
     {
+        echo "check user middleware";
         return $next($request);
     }
 }

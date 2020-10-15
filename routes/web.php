@@ -32,3 +32,6 @@ Route::get('/login',[LoginController::class,'index'])->name('login.index');
 
 //login form routing
 Route::post('/login',[LoginController::class,'loginSubmit'])->name('loginSubmit');
+
+//only one pagerequest check middleware 
+//Route::get('/login',[LoginController::class,'index'])->name('login.index')->middleware('checkuser');
