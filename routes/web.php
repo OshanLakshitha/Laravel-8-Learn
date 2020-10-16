@@ -48,3 +48,7 @@ Route::get('/session/delete',[SessionController::class,'deleteSessionData'])->na
 
 //get database value
 Route::get('/post',[PostController::class,'getAllPost'])->name('post.getAllPost');
+
+Route::get('/addpost',[PostController::class,'addPost'])->name('post.add');
+
+Route::post('/addpost',[PostController::class,'addPostSubmit'])->name('post.addsubmit');
