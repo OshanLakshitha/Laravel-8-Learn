@@ -52,3 +52,11 @@ Route::get('/post',[PostController::class,'getAllPost'])->name('post.getAllPost'
 Route::get('/addpost',[PostController::class,'addPost'])->name('post.add');
 
 Route::post('/addpost',[PostController::class,'addPostSubmit'])->name('post.addsubmit');
+
+Route::get('/post/{id}',[PostController::class,'getPostById'])->name('post.getbyid');
+
+Route::get('/postDelete/{id}',[PostController::class,'deletePost'])->name('post.delete');
+
+Route::get('/update-post/{id}',[PostController::class,'updatePost'])->name('post.update');
+
+Route::post ('/update-post',[PostController::class,'updatePosts'])->name('post.updated');
