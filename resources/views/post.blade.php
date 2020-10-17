@@ -36,8 +36,8 @@
             <td>{{$onePost->body}}</td>
             <td>
                 <a href="/post/{{$onePost->id}}" class="btn btn-success">View</a>
+                <a href="/update-post/{{$onePost->id}}" class="btn btn-primary">edit</a>
                 <a href="/postDelete/{{$onePost->id}}" class="btn btn-danger">Delete</a>
-                <a href="/update-post/{{$onePost->id}}" class="btn btn-danger">edit</a>
             </td>
         </tr>
         @endforeach        
