@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class postTableSeeder extends Seeder
 {
@@ -13,6 +14,9 @@ class postTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+      DB::table('posts')->insert([
+          'title'=>'First Post Title',
+          'body'=>'First Post Description'
+      ]);
     }
 }
