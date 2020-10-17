@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class postTableSeeder extends Seeder
 {
@@ -14,9 +15,12 @@ class postTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('posts')->insert([
-          'title'=>'First Post Title',
-          'body'=>'First Post Description'
-      ]);
+      $faker= Faker::create();
+      foreach(range(1,1000)as $index){
+        DB::table('posts')->insert([
+            'title'=>$faker->sentence(5),
+            'body'=>$faker->paragraph(4)
+        ]);
+      }
     }
 }
