@@ -72,3 +72,11 @@ Route::get('/all-post',[PostController::class,'getAllPostUsingModel'])->name('po
 Route::get('/test' ,function(){
     return view('test');
 });
+
+Route::get('/index' ,function(){
+    return view('index');
+});
+
+Route::get('/about' ,function(){
+    return view('about');
+});
