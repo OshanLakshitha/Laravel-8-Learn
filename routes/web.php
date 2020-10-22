@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PostController;
 /*
@@ -34,7 +35,7 @@ Route::get('/login',[LoginController::class,'index'])->name('login.index');
 //login form routing
 Route::post('/login',[LoginController::class,'loginSubmit'])->name('loginSubmit');
 
-//only one pagerequest check middleware 
+//only one pagerequest check middleware
 //Route::get('/login',[LoginController::class,'index'])->name('login.index')->middleware('checkuser');
 
 //get session data
@@ -80,3 +81,5 @@ Route::get('/index' ,function(){
 Route::get('/about' ,function(){
     return view('about');
 });
+
+Route::get('/users',[PaginationController::class,'allUser']);
