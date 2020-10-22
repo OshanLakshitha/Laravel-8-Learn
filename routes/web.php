@@ -9,6 +9,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UploadController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -83,3 +85,7 @@ Route::get('/about' ,function(){
 });
 
 Route::get('/users',[PaginationController::class,'allUser']);
+
+Route::get('/upload',[UploadController::class,'upload']);
+
+Route::post('/upload',[UploadController::class,'uploadFile'])->name('upload.uploadFile');
