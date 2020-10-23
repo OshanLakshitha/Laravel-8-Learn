@@ -10,6 +10,7 @@ use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UploadController;
+use App\PaymentGateway\Payment;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +90,7 @@ Route::get('/users',[PaginationController::class,'allUser']);
 Route::get('/upload',[UploadController::class,'upload']);
 
 Route::post('/upload',[UploadController::class,'uploadFile'])->name('upload.uploadFile');
+
+Route::get('/payment', function(){
+    return Payment::process();
+});
