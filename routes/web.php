@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PostController;
@@ -94,3 +95,5 @@ Route::post('/upload',[UploadController::class,'uploadFile'])->name('upload.uplo
 Route::get('/payment', function(){
     return Payment::process();
 });
+
+Route::get('/send-email',[MailController::class,'sendEmail']);
