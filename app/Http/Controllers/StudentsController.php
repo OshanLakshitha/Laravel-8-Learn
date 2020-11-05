@@ -19,6 +19,7 @@ class StudentsController extends Controller
         return $student;
     }*/
 
+    //GET Data DESC Order and choose between data
     public function fetchStudents(){
         $student=Student::whereBetween('id',[33,44])->orderBy('id','DESC')->get();
         return $student;

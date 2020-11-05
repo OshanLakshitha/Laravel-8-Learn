@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/student', [StudentsController::class,'fetchStudents']);
+
+Route::get('/add-post', [PostController::class,'addPost']);
+Route::post('/add-post', [PostController::class,'createPost'])->name('post.create');
+Route::get('/posts', [PostController::class,'getPost']);
+Route::get('/post/{id}', [PostController::class,'getPostById']);
+Route::get('/delete-post/{id}', [PostController::class,'deletePost']);
+Route::get('/update-post/{id}', [PostController::class,'updatePost']);
+Route::post('/update-post', [PostController::class,'updateingPost'])->name('update.post');
